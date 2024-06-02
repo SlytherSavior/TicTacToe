@@ -15,13 +15,13 @@ public class TicTacToeRunner {
 
 		if(!checkChar(starter)) {
 			System.out.println("Please enter a valid character to begin with");
-		}
-
+			starter = inputScan.next().charAt(0);
+		} else {
 		// running the program goes here
 		TicTacToe game = new TicTacToe();
 		game.gamePlay('X');
 		// TODO Auto-generated method stub
-
+	}
 	}
 
 	// Check if they have entered valid char or not
