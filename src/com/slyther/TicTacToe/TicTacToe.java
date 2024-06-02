@@ -1,10 +1,8 @@
 package com.slyther.TicTacToe;
 
-import java.util.Arrays;
-
 public class TicTacToe {
 
-	private int[] gameArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	private char[] gameArray = new char[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	private String gameDisplay = " " + gameArray;
 	private Character currentChar;
 	private String displayFormat = "+---+---+---+\n-        -\n+        +";
@@ -12,8 +10,7 @@ public class TicTacToe {
 	// set a method to display the game !
 	public void gamePlay(char startPlayer) {
 
-		System.out.println(Arrays.toString(gameArray));
-		System.out.println(displayFormat);
+		System.out.println(getGameDisplayString(gameArray));
 
 		currentChar = startPlayer;
 
@@ -39,6 +36,19 @@ public class TicTacToe {
 	private boolean checkDiag(String[] game) {
 
 		return true;
+	}
+
+	public static String getGameDisplayString(char[] gameArray) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < gameArray.length; i++) {
+			sb.append(gameArray[i]);
+			if ((i + 1) % 3 == 0 && i != gameArray.length - 1) {
+				sb.append("\n---------\n");
+			} else if ((i + 1) % 3 != 0) {
+				sb.append(" | ");
+			}
+		}
+		return sb.toString();
 	}
 
 }
