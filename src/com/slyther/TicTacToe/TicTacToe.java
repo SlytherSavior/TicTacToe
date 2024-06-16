@@ -2,7 +2,7 @@ package com.slyther.TicTacToe;
 
 public class TicTacToe {
 
-	private char[] gameArray = new char[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	private char[] gameArray = new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 	private String gameDisplay = " " + gameArray;
 	private Character currentChar;
 	private String displayFormat = "+---+---+---+\n-        -\n+        +";
